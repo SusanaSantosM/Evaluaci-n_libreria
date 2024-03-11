@@ -1,19 +1,14 @@
 package com.Susana;
 
-import javax.swing.*;
-
-import com.Susana.Calculadora;
 import com.dam2024.librerias.Entrada;
-import com.dam2024.librerias.Salida;
+
+import javax.swing.*;
 
 public class Main {
   public static void main(String[] args) {
-    Float retorno = Calculadora.opcion(5, Entrada.VENTANA("Escriba el 1er número"),Entrada.VENTANA("Escriba el 2do número"));
 
-    //Visualizamos el retorno
-    if(retorno==null){
-      JOptionPane.showMessageDialog(null,"Algo falla");
-    }else
-      Salida.VENTANA(retorno);
+    float retorno = Calculadora.opcion(5, Entrada.VENTANA("Ingresa 1er numero"), Entrada.VENTANA("Ingresa 2do numero"));
+
+
   }
 }

@@ -33,13 +33,14 @@ public class Calculadora {
 
   /**
    * Método para realizar las operaciones
-   * @param dato1 primer número tipo float
-   * @param dato2 segundo número tipo float
+   *
+   * @param dato1  primer número tipo float
+   * @param dato2  segundo número tipo float
    * @param opcion opcion de operación a realizar
-   * @return resultado de tipo float
    **/
-  public static Float opcion(Integer opcion, Float dato1, Float dato2, Double indice, Double radicando) {
+  public static Float opcion(Integer opcion, Float dato1, Float dato2) {
     float resultado = 0.0f;
+
     switch (opcion) {
       case 1:
         //Suma
@@ -62,24 +63,25 @@ public class Calculadora {
         break;
       case 5:
         //Raiz Cuadrada
-        if(radicando>0) {
-          resultado = (float) Math.sqrt(radicando);
+        if(dato2>0) {
+          resultado = (float) Math.sqrt(dato2);
         } else
           JOptionPane.showMessageDialog(null,"No se puede realizar operación");
         break;
       case 6:
         //Raiz Cubica
-        if(radicando>0){
-          final double pow = Math.pow(radicando, (double) 1/3);
+        if(dato2>0){
+          final double pow = Math.pow(dato2, (double) 1/3);
           resultado = (float) pow;
         } else
           JOptionPane.showMessageDialog(null,"No se puede realizar operación");
         break;
       default:
         //El null nos sirve para hacer condiciones en lugar de try-catch para el retorno
-        resultado = null;
+        resultado = 0;
         break;
     }
-    return resultado;
+
+    return null;
   }
 }
